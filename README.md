@@ -82,7 +82,7 @@ These variables are dynamically injected into configuration headers (`config.h` 
 
 ### **1. Clone the Repository**
 ```bash
-git clone https://github.com/your-repo/MatchMakingApp.git
+git https://github.com/arenkhachaturian/MatchMaker.git
 cd MatchMakingApp
 
 mkdir build
