@@ -1,0 +1,16 @@
+{
+    "games": [
+        {
+            "executablePath": "{GAME_DIR}/dices.bat",
+            "name": "Dices"
+        },
+        {
+            "executablePath": "{GAME_DIR}/russian_roullete.bat",
+            "name": "Russian Roulette"
+        },
+        {
+            "executablePath": "{GAME_DIR}/tic_tac_toe.bat",
+            "name": "TicTacToe"
+        }
+    ]
+}

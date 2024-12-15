@@ -1,0 +1,150 @@
+{
+    "users": [
+        {
+            "firstName": "Ivan",
+            "lastName": "Ivanov",
+            "preferredGames": [
+                "Russian Roulette",
+                "Dices"
+            ],
+            "ratings": {
+                "Dices": 20,
+                "Russian Roulette": 22
+            },
+            "username": "vanya1945!"
+        },
+        {
+            "firstName": "Nevil",
+            "lastName": "O'Hara",
+            "preferredGames": [
+                "TicTacToe",
+                "Russian Roulette"
+            ],
+            "ratings": {
+                "Russian Roulette": 14,
+                "TicTacToe": 15
+            },
+            "username": "nevil_ohara"
+        },
+        {
+            "firstName": "Elon",
+            "lastName": "Musk",
+            "preferredGames": [
+                "TicTacToe"
+            ],
+            "ratings": {
+                "TicTacToe": 19
+            },
+            "username": "doge"
+        },
+        {
+            "firstName": "Gor",
+            "lastName": "Vardanyan",
+            "preferredGames": [
+                "TicTacToe",
+                "Russian Roulette",
+                "Dices"
+            ],
+            "ratings": {
+                "Dices": 9999,
+                "Russian Roulette": 9999,
+                "TicTacToe": 9999
+            },
+            "username": "Chorni"
+        },
+        {
+            "firstName": "Rihanna",
+            "lastName": "Fenty",
+            "preferredGames": [
+                "Russian Roulette"
+            ],
+            "ratings": {
+                "Russian Roulette": 16
+            },
+            "username": "RiPi"
+        },
+        {
+            "firstName": "Julius",
+            "lastName": "Ceasar",
+            "preferredGames": [
+                "Dices"
+            ],
+            "ratings": {
+                "Dices": 16
+            },
+            "username": "VeniVidiVici"
+        },
+        {
+            "firstName": "Han",
+            "lastName": "Solo",
+            "preferredGames": [
+                "Dices"
+            ],
+            "ratings": {
+                "Dices": 20
+            },
+            "username": "TheMilleniumFalcon"
+        },
+        {
+            "firstName": "Groot",
+            "lastName": "Guardian",
+            "preferredGames": [
+                "TicTacToe",
+                "Dices"
+            ],
+            "ratings": {
+                "Dices": 12,
+                "TicTacToe": 14
+            },
+            "username": "the_galaxy_guardian"
+        },
+        {
+            "firstName": "Ernest",
+            "lastName": "Hemingway",
+            "preferredGames": [
+                "Russian Roulette"
+            ],
+            "ratings": {
+                "Russian Roulette": 23
+            },
+            "username": "ernest_usa"
+        },
+        {
+            "firstName": "Fyodor",
+            "lastName": "Dostoevski",
+            "preferredGames": [
+                "Russian Roulette",
+                "Dices"
+            ],
+            "ratings": {
+                "Dices": 22,
+                "Russian Roulette": 20
+            },
+            "username": "the_gambler_111"
+        },
+        {
+            "firstName": "Jiraya",
+            "lastName": "NoOneKnows",
+            "preferredGames": [
+                "TicTacToe",
+                "Dices"
+            ],
+            "ratings": {
+                "Dices": 21,
+                "TicTacToe": 19
+            },
+            "username": "ThePervertedSanin"
+        },
+        {
+            "firstName": "Kurt",
+            "lastName": "Cobain",
+            "preferredGames": [
+                "Russian Roulette"
+            ],
+            "ratings": {
+                "Russian Roulette": 20
+            },
+            "username": "kurdt_"
+        }
+    ]
+}

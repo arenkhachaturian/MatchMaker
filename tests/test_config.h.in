@@ -1,0 +1,6 @@
+#ifndef TEST_CONFIG_H
+#define TEST_CONFIG_H
+
+#define TEST_GAMES_DIR "@TEST_GAMES_DIR@"
+
+#endif // CONFIG_H

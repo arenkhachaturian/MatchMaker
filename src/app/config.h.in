@@ -1,0 +1,12 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define DB_DIR "@DB_DIR@"
+
+#define USER_DATA_FILE "@USER_DATA_FILE@"
+
+#define GAME_DATA_FILE "@GAME_DATA_FILE@"
+
+#define GAME_EXEC_DIR "@GAME_EXEC_DIR@"
+
+#endif // CONFIG_H
