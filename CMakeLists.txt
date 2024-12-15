@@ -124,7 +124,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
 qt_add_executable(MatchMakingApp
         MANUAL_FINALIZATION
-        main.cpp
+        src/main.cpp
         ${PROJECT_SOURCES}
         src/app/app.h src/app/app.cpp
         src/app/config.h
@@ -133,7 +133,7 @@ else()
     if(ANDROID)
         add_library(MatchMakingApp SHARED ${PROJECT_SOURCES})
     else()
-        add_executable(MatchMakingApp main.cpp ${PROJECT_SOURCES})
+        add_executable(MatchMakingApp src/main.cpp ${PROJECT_SOURCES})
     endif()
 endif()
 
