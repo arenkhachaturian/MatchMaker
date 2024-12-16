@@ -25,11 +25,12 @@ def play_game(player1, player2):
                 return True
         return False
 
+    board_fields = [0, 1, 2, 3, 4, 5, 7, 8]
     for turn in range(9):
         current_player, symbol = players[turn % 2]
         print_board()
         # this explicityis for bot
-        prompt = f"{current_player}, enter [0, 1, 2, 3, 4, 5, 7, 8] for your turn('q' to exit) "
+        prompt = f"{current_player}, enter " + str(board_fields) +  " for your turn('q' to exit) "
 
         if isinstance(current_player, str):  # Human player
             action = input(prompt).strip()
@@ -42,6 +43,7 @@ def play_game(player1, player2):
 
         if action.isdigit() and 0 <= int(action) <= 8:
             move = int(action)
+            board_fields.remove(move)
             if board[move] == " ":
                 board[move] = symbol
                 if check_winner():
@@ -51,7 +53,7 @@ def play_game(player1, player2):
             else:
                 print("Invalid move! Cell already taken.\n")
         else:
-            print("Invalid option. Try again.\n")
+            print("Invalid option.\n")
 
     # If no one wins after 9 turns, it's a draw
     print_board()

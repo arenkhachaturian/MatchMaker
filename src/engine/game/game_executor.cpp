@@ -81,7 +81,7 @@ void GameExecutor::runExecutableGame(const Game &game, const QMap<QString, QStri
         for (const QString &line : lines)
         {
             QString trimmedLine = line.trimmed();
-            QRegularExpression winnerRegex(R"(WINNER:\s*([\w]+(?:,\s*[\w]+)?)$)");
+            QRegularExpression winnerRegex(R"(WINNER:\s*([\w]+(?:,\s*[\w]+)?))");
             QRegularExpressionMatch match = winnerRegex.match(trimmedLine);
             if (match.hasMatch())
             {
