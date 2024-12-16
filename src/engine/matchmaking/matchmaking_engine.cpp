@@ -8,7 +8,7 @@ MatchmakingEngine::MatchmakingEngine(UserPoolManager *userPool, UserRegistry *us
 {
     connect(&m_timer, &QTimer::timeout, this, &MatchmakingEngine::processMatchmaking);
     connect(m_userRegistry, &UserRegistry::userChanged, this, &MatchmakingEngine::handleRegistryUpdate);
-    connect(m_gameExecutor, &GameExecutor::gameFinished, this, onGameFinished);
+    connect(m_gameExecutor, &GameExecutor::gameFinished, this, &MatchmakingEngine::onGameFinished);
 }
 
 void MatchmakingEngine::start(int intervalMs)
