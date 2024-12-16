@@ -85,34 +85,36 @@ set(VIEWER_SOURCES
 # UI Files
 set(UI_FILES src/viewers/mainwindow/mainwindow.ui)
 
-# Define test cases
-add_test_executable(test_engine
-    "src/engine/user/user.cpp;tests/test_user.cpp"
-)
+# Define test cases in debug build
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    add_test_executable(test_engine
+        "src/engine/user/user.cpp;tests/test_user.cpp"
+    )
 
-add_test_executable(test_game
-    "src/engine/game/game.cpp;tests/test_game.cpp"
-)
+    add_test_executable(test_game
+        "src/engine/game/game.cpp;tests/test_game.cpp"
+    )
 
-add_test_executable(test_json_io
-    "src/engine/io/json_io_handler.cpp;src/engine/user/user.cpp;src/engine/game/game.cpp;tests/test_json_io.cpp"
-)
+    add_test_executable(test_json_io
+        "src/engine/io/json_io_handler.cpp;src/engine/user/user.cpp;src/engine/game/game.cpp;tests/test_json_io.cpp"
+    )
 
-add_test_executable(test_user_pool_mgr
-    "${ENGINE_SOURCES};tests/test_user_pool_mgr.cpp"
-)
+    add_test_executable(test_user_pool_mgr
+        "${ENGINE_SOURCES};tests/test_user_pool_mgr.cpp"
+    )
 
-add_test_executable(test_game_executor
-    "${ENGINE_SOURCES};tests/test_game_executor.cpp"
-)
+    add_test_executable(test_game_executor
+        "${ENGINE_SOURCES};tests/test_game_executor.cpp"
+    )
 
-add_test_executable(test_user_registry
-    "${ENGINE_SOURCES};tests/test_user_registry.cpp"
-)
+    add_test_executable(test_user_registry
+        "${ENGINE_SOURCES};tests/test_user_registry.cpp"
+    )
 
-add_test_executable(test_matchmaking_engine
-    "${ENGINE_SOURCES};tests/test_matchmaking_engine.cpp"
-)
+    add_test_executable(test_matchmaking_engine
+        "${ENGINE_SOURCES};tests/test_matchmaking_engine.cpp"
+    )
+endif() # Define test cases in debug build
 
 # Application sources
 set(PROJECT_SOURCES
