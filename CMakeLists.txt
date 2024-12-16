@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(MatchMakingApp VERSION 0.1 LANGUAGES CXX)
+project(MatchMaker VERSION 0.1 LANGUAGES CXX)
 
 # Enable Qt-specific features
 set(CMAKE_AUTOUIC ON)
@@ -22,6 +22,12 @@ set(DB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/app_data")
 set(GAME_EXEC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/games")
 set(USER_DATA_FILE "${DB_DIR}/user_data.json")
 set(GAME_DATA_FILE "${DB_DIR}/game_data.json")
+
+if (WIN32)
+    set(EXEC_EXTENSION "bat")
+elseif (UNIX)
+    set(EXEC_EXTENSION "sh")
+endif()
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(TEST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tests")

@@ -114,9 +114,11 @@ QList<Game> JsonIOHandler::readGames() const
         QString executablePath = gameObject.value("executablePath").toString();
 
         // TODO: integrate env variable mechanism to avoid this
-        QString resolvedPath = executablePath;
-        resolvedPath.replace("{GAME_DIR}", GAME_EXEC_DIR);
-        games.append(Game(name, resolvedPath));
+        QString portablePath = executablePath;
+        portablePath.replace("{GAME_DIR}", GAME_EXEC_DIR);
+        int dotIndex = portablePath.indexOf('.');
+        portablePath = portablePath.left(dotIndex+1) + EXEC_EXTENSION;
+        games.append(Game(name, portablePath));
     }
 
     return games;
@@ -139,7 +141,9 @@ void JsonIOHandler::writeGames(const QList<Game> &games) const
 
         QString executablePath = game.getExecutablePath();
         QString portablePath = executablePath;
-        portablePath.replace(GAME_EXEC_DIR, "{GAME_DIR}"); // Replace GAME_EXEC_DIR with {GAME_DIR}
+        portablePath.replace(GAME_EXEC_DIR, "{GAME_DIR}");
+        int dotIndex = portablePath.indexOf('.');
+        portablePath = portablePath.left(dotIndex+1) + "{EXEC_EXTENSION}";
 
         gameObj["executablePath"] = portablePath;
         gamesArray.append(gameObj);

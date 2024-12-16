@@ -1,8 +1,8 @@
-# MatchMakingApp
+# MatchMaker
 
 ## Overview
 
-MatchMakingApp is a Qt-based application designed to manage users and games, providing matchmaking functionality for players. It features a robust engine, intuitive UI, and a modular architecture to ensure scalability and maintainability.
+MatchMaker is a Qt-based application designed to manage users and games, providing matchmaking functionality for players. It features a robust engine, intuitive UI, and a modular architecture to ensure scalability and maintainability.
 
 Key features include:
 - A **user dashboard** with filtering and sorting options.
@@ -74,7 +74,7 @@ These variables are dynamically injected into configuration headers (`config.h` 
 
 ### **Build Requirements**
 - **CMake 3.16+**
-- **Qt6 (preferred) or Qt5**: Widgets and Test modules are required.
+- **Qt6: Widgets and Test modules are required.
 
 ---
 
@@ -83,9 +83,9 @@ These variables are dynamically injected into configuration headers (`config.h` 
 ### **1. Clone the Repository**
 ```bash
 git https://github.com/arenkhachaturian/MatchMaker.git
-cd MatchMakingApp
+cd MatchMaker
 
 mkdir build
 cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
+cmake -DCMAKE_PREFIX_PATH=<path_to_qt6_cmake_files> ..
 make

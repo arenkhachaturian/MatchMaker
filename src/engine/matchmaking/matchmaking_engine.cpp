@@ -7,7 +7,7 @@ MatchmakingEngine::MatchmakingEngine(UserPoolManager *userPool, UserRegistry *us
     : QObject(parent), m_userPoolManager(userPool), m_userRegistry(userRegistry), m_gameRegistry(gameRegistry), m_gameExecutor(gameExecutor)
 {
     connect(&m_timer, &QTimer::timeout, this, &MatchmakingEngine::processMatchmaking);
-    connect(m_userRegistry, UserRegistry::userChanged, this, &MatchmakingEngine::handleRegistryUpdate);
+    connect(m_userRegistry, &UserRegistry::userChanged, this, &MatchmakingEngine::handleRegistryUpdate);
     connect(m_gameExecutor, &GameExecutor::gameFinished, this, onGameFinished);
 }
 

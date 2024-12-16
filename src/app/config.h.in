@@ -9,4 +9,6 @@
 
 #define GAME_EXEC_DIR "@GAME_EXEC_DIR@"
 
+#define EXEC_EXTENSION "@EXEC_EXTENSION@"
+
 #endif // CONFIG_H
