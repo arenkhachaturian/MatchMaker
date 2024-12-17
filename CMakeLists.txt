@@ -120,6 +120,8 @@ endif() # Define test cases in debug build
 set(PROJECT_SOURCES
     src/app/app.h
     src/app/app.cpp
+    src/app/mock_user_behavior.h
+    src/app/mock_user_behavior.cpp
     ${ENGINE_SOURCES}
     ${MODEL_SOURCES}
     ${VIEWER_SOURCES}

@@ -1,4 +1,5 @@
 #include "app.h"
+#include "mock_user_behavior.h"
 #include "config.h"
 #include "engine/io/json_io_handler.h"
 #include "engine/game/game.h"
@@ -38,6 +39,12 @@ App::App(QObject *parent)
     auto users = m_userIoHandler->readUsers();
     auto games = m_gameIoHandler->readGames();
 
+    m_matchmakingEngine = new MatchmakingEngine(m_userPoolManager, m_userRegistry, m_gameRegistry,
+                                                    m_gameExecutor, this);
+
+
+    MockUserBehavior* mockBehavior = new MockUserBehavior(m_userPoolManager, m_matchmakingEngine, this);
+
     for (const auto &user : users)
     {
         m_userRegistry->addUser(user);
@@ -51,8 +58,6 @@ App::App(QObject *parent)
         m_userPoolManager->addUser(user.getUsername());
     }
 
-    m_matchmakingEngine = new MatchmakingEngine(m_userPoolManager, m_userRegistry, m_gameRegistry,
-                                                    m_gameExecutor, this);
 
     m_dashboardModel = new DashboardModel(m_gameRegistry, m_userRegistry, this);
     m_userTableModel = new UserTableModel(m_userRegistry, this);
@@ -65,25 +70,7 @@ App::App(QObject *parent)
     w.resize(1200, 600);
     w.show();
 
-    // Mocking user behaviour
-    m_timer = new QTimer(this);
-    QObject::connect(m_timer, &QTimer::timeout, [this]()
-        {
-            auto users = m_userRegistry->getAllUsers();
-
-            if (!users.isEmpty()) {
-                int randomIndex = QRandomGenerator::global()->bounded(users.size());
-                const QString& username = users[randomIndex].getUsername();
-                qDebug() << "Requesting match for user:" << username;
-                m_matchmakingEngine->requestMatch(username);
-            } else {
-                qDebug() << "No users available in the registry.";
-            }
-        }
-    );
-
-    m_timer->start(2000);
-    m_matchmakingEngine->start(2000);
+    m_matchmakingEngine->start(200);
 }
 
 App::~App()
