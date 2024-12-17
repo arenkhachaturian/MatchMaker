@@ -51,7 +51,7 @@ void MatchmakingEngine::processMatchmaking()
     std::mt19937 gen(rd());
     std::shuffle(userList.begin(), userList.end(), gen);
 
-    for (const QString &username : waitingUsers)
+    for (const QString &username : userList)
     {
         auto preferredGames = m_userRegistry->getUserPreferredGames(username);
         if (preferredGames.isEmpty())
@@ -67,6 +67,7 @@ void MatchmakingEngine::processMatchmaking()
         qDebug() << "Match started: " << username << " vs " << opponentName;
         emit matchStarted(username, opponentName, gameName);
         m_gameExecutor->runGame(m_gameRegistry->getGame(gameName), {{"player1", username}, {"player2", opponentName}});
+        return;
     }
 }
 
