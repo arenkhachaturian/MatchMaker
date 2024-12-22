@@ -25,7 +25,7 @@ def play_game(player1, player2):
                 return True
         return False
 
-    board_fields = [0, 1, 2, 3, 4, 5, 7, 8]
+    board_fields = [0, 1, 2, 3, 4, 5, 6, 7, 8]
     for turn in range(9):
         current_player, symbol = players[turn % 2]
         print_board()
